@@ -1,6 +1,6 @@
 <?php
 
-namespace Weirdan\PsalmPluginSkeleton\Tests;
+namespace Matthewbdaly\ZendFramework1Plugin\Tests;
 
 use SimpleXMLElement;
 use Matthewbdaly\ZendFramework1Plugin\Plugin;
