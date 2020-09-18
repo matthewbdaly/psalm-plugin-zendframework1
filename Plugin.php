@@ -1,6 +1,6 @@
 <?php
 
-namespace Weirdan\PsalmPluginSkeleton;
+namespace Matthewbdaly\ZendFramework1Plugin;
 
 use SimpleXMLElement;
 use Psalm\Plugin\PluginEntryPointInterface;

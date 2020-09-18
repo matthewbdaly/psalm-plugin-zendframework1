@@ -1,8 +1,9 @@
 <?php
+
 namespace Weirdan\PsalmPluginSkeleton\Tests;
 
 use SimpleXMLElement;
-use Weirdan\PsalmPluginSkeleton\Plugin;
+use Matthewbdaly\ZendFramework1Plugin\Plugin;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psalm\Plugin\RegistrationInterface;
