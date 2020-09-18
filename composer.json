@@ -19,17 +19,17 @@
     },
     "extra": {
         "psalm" : {
-            "pluginClass": "Weirdan\\PsalmPluginSkeleton\\Plugin"
+            "pluginClass": "Matthewbdaly\\ZendFramework1Plugin\\Plugin"
         }
     },
     "autoload": {
         "psr-4": {
-            "Weirdan\\PsalmPluginSkeleton\\": ["."]
+            "Matthewbdaly\\ZendFramework1Plugin\\": ["."]
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Weirdan\\PsalmPluginSkeleton\\Tests\\": "tests"
+            "Matthewbdaly\\ZendFramework1Plugin\\Tests\\": "tests"
         }
     },
     "scripts" : {
