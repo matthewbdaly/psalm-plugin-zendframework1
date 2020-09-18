@@ -1,12 +1,12 @@
 {
-    "name": "weirdan/psalm-plugin-skeleton",
-    "description": "Template to create psalm-plugin projects from",
+    "name": "matthewbdaly/psalm-plugin-zendframework1",
+    "description": "Psalm plugin for Zend Framework 1",
     "type": "psalm-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bruce Weirdan",
-            "email": "weirdan@gmail.com"
+            "name": "Matthew Daly",
+            "email": "matthewbdaly@gmail.com"
         }
     ],
     "require": {
