@@ -1,4 +1,7 @@
 # psalm-plugin-zendframework1
+
+[![Build Status](https://travis-ci.org/matthewbdaly/psalm-plugin-zendframework1.svg?branch=master)](https://travis-ci.org/matthewbdaly/psalm-plugin-zendframework1)
+
 Psalm plugin for Zend Framework 1
 
 ## Quickstart
