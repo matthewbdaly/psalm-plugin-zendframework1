@@ -22,11 +22,17 @@
             </errorLevel>
         </PropertyNotSetInConstructor>
 
-        <TypeCoercion>
+        <ArgumentTypeCoercion>
             <errorLevel type="suppress">
                 <directory name="tests" />
             </errorLevel>
-        </TypeCoercion>
+        </ArgumentTypeCoercion>
+
+        <ReservedWord>
+            <errorLevel type="suppress">
+                <directory name="src" />
+            </errorLevel>
+        </ReservedWord>
 
     </issueHandlers>
 </psalm>
