@@ -73862,7 +73862,7 @@ namespace {
          *
          * @return void
          */
-        public abstract function _write($event);
+        protected abstract function _write($event);
         /**
          * @param Zend_Config|array<array-key, mixed> $config
          *
