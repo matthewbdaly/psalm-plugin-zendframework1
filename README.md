@@ -24,3 +24,9 @@ Finally, run Psalm to analyze your codebase
 ```bash
 ./vendor/bin/psalm
 ```
+
+# DISCLAIMER
+
+The stub files for this plugin were generated automatically, and I have noticed that the access levels for properties and methods aren't always accurate, leading to false errors when the implemented access level differs from that defined in the stub. For an example of a fix for this, see https://github.com/matthewbdaly/psalm-plugin-zendframework1/commit/1a83a78b805ad4430e04f454a819605f56efb996#diff-25a6634263c1b1f6fc4697a04e2b9904ea4b042a89af59dc93ec1f5d44848a26
+
+If you see an error along those lines, please try running Psalm with this plugin disabled. If it then no longer flags the issue, it's likely the definition of that method or property in the stub file has a different access level to the one in the code base. If this is the case, please submit a pull request to correct the access level.
