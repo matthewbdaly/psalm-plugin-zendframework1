@@ -26598,7 +26598,7 @@ namespace {
          * @param int|null $fetchMode
          * @param mixed $bind
          *
-         * @return PDO_Statement|Zend_Db_Statement
+         * @return PDOStatement|Zend_Db_Statement
          */
         public function query($fetchMode = null, $bind = array())
         {
