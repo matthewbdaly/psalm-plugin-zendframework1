@@ -136838,7 +136838,7 @@ namespace {
          */
         public $_pattern;
         /**
-         * @param Zend_Config|string $pattern
+         * @param Zend_Config|string|string[] $pattern
          *
          * @throws Zend_Validate_Exception
          */
