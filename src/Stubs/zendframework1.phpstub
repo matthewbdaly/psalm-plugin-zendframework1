@@ -26401,7 +26401,7 @@ namespace {
         {
         }
         /**
-         * @param Zend_Db_Expr|array<array-key, mixed>|string $name
+         * @param Zend_Db_Expr|Zend_Db_Select|array<array-key, mixed>|string $name
          * @param Zend_Db_Expr|array<array-key, mixed>|string $cols
          * @param null|string $schema
          *
@@ -26503,7 +26503,7 @@ namespace {
         {
         }
         /**
-         * @param string $cond
+         * @param string|Zend_Db_Expr $cond
          * @param mixed|null $value
          * @param int|null $type
          *
@@ -26513,7 +26513,7 @@ namespace {
         {
         }
         /**
-         * @param string $cond
+         * @param string|Zend_Db_Expr $cond
          * @param mixed|null $value
          * @param int|null $type
          *
