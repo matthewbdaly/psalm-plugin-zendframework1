@@ -30621,7 +30621,7 @@ namespace {
          * @param string $option
          * @param string $value
          *
-         * @return Zend_Form_Element_Multi
+         * @return $this
          */
         public function addMultiOption($option, $value = '')
         {
@@ -30629,7 +30629,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $options
          *
-         * @return Zend_Form_Element_Multi
+         * @return $this
          */
         public function addMultiOptions(array $options)
         {
@@ -44908,7 +44908,7 @@ namespace {
          * @param string $key
          * @param mixed $value
          *
-         * @return Zend_Form
+         * @return $this
          */
         public function setAttrib($key, $value)
         {
@@ -44924,7 +44924,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $attribs
          *
-         * @return Zend_Form
+         * @return $this
          */
         public function setAttribs(array $attribs)
         {
@@ -47067,7 +47067,7 @@ namespace {
          * @param string $key
          * @param mixed $value
          *
-         * @return Zend_Form_DisplayGroup
+         * @return $this
          */
         public function setAttrib($key, $value)
         {
@@ -47083,7 +47083,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $attribs
          *
-         * @return Zend_Form_DisplayGroup
+         * @return $this
          */
         public function setAttribs(array $attribs)
         {
@@ -47783,7 +47783,7 @@ namespace {
         /**
          * @param string $label
          *
-         * @return Zend_Form_Element
+         * @return $this
          */
         public function setLabel($label)
         {
@@ -47811,7 +47811,7 @@ namespace {
         /**
          * @param bool $flag
          *
-         * @return Zend_Form_Element
+         * @return $this
          */
         public function setRequired($flag = true)
         {
@@ -47853,7 +47853,7 @@ namespace {
         /**
          * @param bool $flag
          *
-         * @return Zend_Form_Element
+         * @return $this
          */
         public function setAllowEmpty($flag)
         {
@@ -47916,7 +47916,7 @@ namespace {
          * @param string $name
          * @param mixed $value
          *
-         * @return Zend_Form_Element
+         * @return $this
          *
          * @throws Zend_Form_Exception
          */
@@ -47926,7 +47926,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $attribs
          *
-         * @return Zend_Form_Element
+         * @return $this
          */
         public function setAttribs(array $attribs)
         {
@@ -48033,7 +48033,7 @@ namespace {
          * @param bool $breakChainOnFailure
          * @param array<array-key, mixed> $options
          *
-         * @return Zend_Form_Element
+         * @return $this
          *
          * @throws Zend_Form_Exception
          */
@@ -48043,7 +48043,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $validators
          *
-         * @return Zend_Form_Element
+         * @return $this
          */
         public function addValidators(array $validators)
         {
@@ -48662,7 +48662,7 @@ namespace {
          * @param bool $breakChainOnFailure
          * @param mixed $options
          *
-         * @return Zend_Form_Element_File
+         * @return $this
          *
          * @throws Zend_Form_Exception
          */
@@ -48672,7 +48672,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $validators
          *
-         * @return Zend_Form_Element_File
+         * @return $this
          */
         public function addValidators(array $validators)
         {
@@ -49213,7 +49213,7 @@ namespace {
          * @param string $option
          * @param string $value
          *
-         * @return Zend_Form_Element_Multi
+         * @return $this
          */
         public function addMultiOption($option, $value = '')
         {
@@ -49221,7 +49221,7 @@ namespace {
         /**
          * @param array<array-key, mixed> $options
          *
-         * @return Zend_Form_Element_Multi
+         * @return $this
          */
         public function addMultiOptions(array $options)
         {
@@ -51126,7 +51126,7 @@ namespace {
         /**
          * @param null|string $value
          *
-         * @return Zend_Gdata_App_Extension_Category
+         * @return $this
          */
         public function setLabel($value)
         {
@@ -58560,7 +58560,7 @@ namespace {
         /**
          * @param string $value
          *
-         * @return Zend_Gdata_Media_Extension_MediaCategory
+         * @return $this
          */
         public function setLabel($value)
         {
@@ -83312,7 +83312,7 @@ namespace {
         /**
          * @param string $label
          *
-         * @return Zend_Navigation_Page
+         * @return $this
          *
          * @throws Zend_Navigation_Exception
          */
@@ -87104,7 +87104,7 @@ namespace {
     {
         public const PDF_VERSION = '1.4';
         public const PDF_HEADER = '%PDF-1.4
-%‚„œ”
+%√¢√£√è√ì
 ';
         public const PDF_FORM_FIELD_READONLY = 1;
         public const PDF_FORM_FIELD_REQUIRED = 2;
@@ -101084,7 +101084,7 @@ namespace {
         public const IN_ASCII_DIGIT = 6;
         public const IN_CHAR = 7;
         public const IN_MUTABLE_CHAR = 8;
-        public const QUERY_WHITE_SPACE_CHARS = ' 
+        public const QUERY_WHITE_SPACE_CHARS = '
 	';
         public const QUERY_SYNT_CHARS = ':()[]{}!|&';
         public const QUERY_MUTABLE_CHARS = '+-';
@@ -104137,18 +104137,18 @@ namespace {
         public const OP_EMPTY_TUPLE = ')';
         public const OP_SETITEMS = 'u';
         public const OP_BINFLOAT = 'G';
-        public const OP_PROTO = 'Ä';
-        public const OP_NEWOBJ = 'Å';
-        public const OP_EXT1 = 'Ç';
-        public const OP_EXT2 = 'É';
-        public const OP_EXT4 = 'Ñ';
-        public const OP_TUPLE1 = 'Ö';
-        public const OP_TUPLE2 = 'Ü';
-        public const OP_TUPLE3 = 'á';
-        public const OP_NEWTRUE = 'à';
-        public const OP_NEWFALSE = 'â';
-        public const OP_LONG1 = 'ä';
-        public const OP_LONG4 = 'ã';
+        public const OP_PROTO = '¬Ä';
+        public const OP_NEWOBJ = '¬Å';
+        public const OP_EXT1 = '¬Ç';
+        public const OP_EXT2 = '¬É';
+        public const OP_EXT4 = '¬Ñ';
+        public const OP_TUPLE1 = '¬Ö';
+        public const OP_TUPLE2 = '¬Ü';
+        public const OP_TUPLE3 = '¬á';
+        public const OP_NEWTRUE = '¬à';
+        public const OP_NEWFALSE = '¬â';
+        public const OP_LONG1 = '¬ä';
+        public const OP_LONG4 = '¬ã';
         public const OP_BINBYTES = 'B';
         public const OP_SHORT_BINBYTES = 'C';
         /**
