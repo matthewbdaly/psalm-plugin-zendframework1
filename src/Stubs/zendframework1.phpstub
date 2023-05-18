@@ -133097,7 +133097,7 @@ namespace {
         /**
          * @var array<array-key, mixed>
          */
-        public $_messageVariables;
+        protected $_messageVariables;
         /**
          * @var array<array-key, mixed>
          */
