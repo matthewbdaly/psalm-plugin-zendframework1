@@ -19355,12 +19355,14 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function getParam($key, $default = null)
         {
         }
         /**
          * @return array<array-key, mixed>
+         * @psalm-taint-source input
          */
         public function getUserParams()
         {
@@ -19370,6 +19372,7 @@ namespace {
          * @param null|string $default
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function getUserParam($key, $default = null)
         {
@@ -19385,6 +19388,7 @@ namespace {
         }
         /**
          * @return array<array-key, mixed>
+         * @psalm-taint-source input
          */
         public function getParams()
         {
@@ -19476,6 +19480,7 @@ namespace {
          * @param string $key
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function __get($key)
         {
@@ -19484,6 +19489,7 @@ namespace {
          * @param string $key
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function get($key)
         {
@@ -19538,6 +19544,7 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function getQuery($key = null, $default = null)
         {
@@ -19556,6 +19563,7 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function getPost($key = null, $default = null)
         {
@@ -19565,6 +19573,7 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source cookie
          */
         public function getCookie($key = null, $default = null)
         {
@@ -19574,6 +19583,7 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source header
          */
         public function getServer($key = null, $default = null)
         {
@@ -19583,6 +19593,7 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source system_secret
          */
         public function getEnv($key = null, $default = null)
         {
@@ -19597,6 +19608,7 @@ namespace {
         }
         /**
          * @return string
+         * @psalm-taint-source input
          */
         public function getRequestUri()
         {
@@ -19639,6 +19651,7 @@ namespace {
         }
         /**
          * @return string
+         * @psalm-taint-source file
          */
         public function getPathInfo()
         {
@@ -19669,12 +19682,14 @@ namespace {
          * @param mixed|null $default
          *
          * @return mixed
+         * @psalm-taint-source input
          */
         public function getParam($key, $default = null)
         {
         }
         /**
          * @return array<array-key, mixed>
+         * @psalm-taint-source input
          */
         public function getParams()
         {
@@ -19778,6 +19793,7 @@ namespace {
         }
         /**
          * @return false|string
+         * @psalm-taint-source input
          */
         public function getRawBody()
         {
@@ -19788,6 +19804,7 @@ namespace {
          * @return false|string
          *
          * @throws Zend_Controller_Request_Exception
+         * @psalm-taint-source header
          */
         public function getHeader($header)
         {
@@ -24184,6 +24201,8 @@ namespace {
          * @param mixed $bind
          *
          * @return Zend_Db_Statement_Interface
+         * @psalm-taint sink sql $sql
+         * @psalm-taint sink sql $bind
          */
         public function query($sql, $bind = array())
         {
@@ -24213,6 +24232,8 @@ namespace {
          * @return int
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $table
+         * @psalm-taint-sink sql $bind
          */
         public function insert($table, array $bind)
         {
@@ -24225,6 +24246,9 @@ namespace {
          * @return int
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $table
+         * @psalm-taint-sink sql $bind
+         * @psalm-taint-sink sql $where
          */
         public function update($table, array $bind, $where = '')
         {
@@ -24234,6 +24258,8 @@ namespace {
          * @param mixed $where
          *
          * @return int
+         * @psalm-taint-sink sql $table
+         * @psalm-taint-sink sql $where
          */
         public function delete($table, $where = '')
         {
@@ -24242,6 +24268,7 @@ namespace {
          * @param mixed $where
          *
          * @return string
+         * @psalm-taint-sink sql $where
          */
         public function _whereExpr($where)
         {
@@ -24264,6 +24291,7 @@ namespace {
          * @param mixed|null $fetchMode
          *
          * @return array<array-key, mixed>
+         * @psalm-taint-sink sql $sql
          */
         public function fetchAll($sql, $bind = array(), $fetchMode = null)
         {
@@ -24274,6 +24302,7 @@ namespace {
          * @param mixed|null $fetchMode
          *
          * @return mixed
+         * @psalm-taint-sink sql $sql
          */
         public function fetchRow($sql, $bind = array(), $fetchMode = null)
         {
@@ -24283,6 +24312,7 @@ namespace {
          * @param mixed $bind
          *
          * @return array<array-key, mixed>
+         * @psalm-taint-sink sql $sql
          */
         public function fetchAssoc($sql, $bind = array())
         {
@@ -24292,6 +24322,7 @@ namespace {
          * @param mixed $bind
          *
          * @return array<array-key, mixed>
+         * @psalm-taint-sink sql $sql
          */
         public function fetchCol($sql, $bind = array())
         {
@@ -24301,6 +24332,7 @@ namespace {
          * @param mixed $bind
          *
          * @return array<array-key, mixed>
+         * @psalm-taint-sink sql $sql
          */
         public function fetchPairs($sql, $bind = array())
         {
@@ -24310,6 +24342,7 @@ namespace {
          * @param mixed $bind
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function fetchOne($sql, $bind = array())
         {
@@ -24318,6 +24351,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -24327,6 +24361,7 @@ namespace {
          * @param mixed|null $type
          *
          * @return mixed
+         * @psalm-taint-escape sql
          */
         public function quote($value, $type = null)
         {
@@ -24338,6 +24373,7 @@ namespace {
          * @param int|null $count
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function quoteInto($text, $value, $type = null, $count = null)
         {
@@ -24462,6 +24498,7 @@ namespace {
          * @param Zend_Db_Select|string $sql
          *
          * @return PDOStatement|Zend_Db_Statement
+         * @psalm-taint-escape sql
          */
         public abstract function prepare($sql);
         /**
@@ -24488,6 +24525,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public abstract function limit($sql, $count, $offset = 0);
         /**
@@ -24542,6 +24580,7 @@ namespace {
          * @param string $sql
          *
          * @return Zend_Db_Statement_Db2
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -24564,6 +24603,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -24651,6 +24691,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -24730,6 +24771,7 @@ namespace {
          * @param mixed $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -24779,6 +24821,7 @@ namespace {
          * @param string $sql
          *
          * @return Zend_Db_Statement_Mysqli
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -24826,6 +24869,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -24906,6 +24950,7 @@ namespace {
          * @param string $sql
          *
          * @return Zend_Db_Statement_Oracle
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -24914,6 +24959,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape $value
          */
         public function _quote($value)
         {
@@ -25008,6 +25054,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Oracle_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25085,6 +25132,7 @@ namespace {
          * @param string $sql
          *
          * @return PDOStatement
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -25105,6 +25153,8 @@ namespace {
          * @return Zend_Db_Statement_Pdo
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
+         * @psalm-taint sink sql $bind
          */
         public function query($sql, $bind = array())
         {
@@ -25113,6 +25163,7 @@ namespace {
          * @param mixed $sql
          *
          * @return int
+         * @psalm-taint-sink sql $sql
          */
         public function exec($sql)
         {
@@ -25121,6 +25172,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -25201,6 +25253,7 @@ namespace {
          * @param string $sql
          *
          * @return PDOStatement
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -25227,6 +25280,8 @@ namespace {
          * @return int
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $table
+         * @psalm-taint-sink sql $bind
          */
         public function insert($table, array $bind)
         {
@@ -25237,6 +25292,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25308,6 +25364,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25380,6 +25437,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25457,6 +25515,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25482,6 +25541,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -25537,6 +25597,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25629,6 +25690,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25673,6 +25735,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25757,6 +25820,7 @@ namespace {
          * @param int $offset
          *
          * @return string
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25765,6 +25829,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -25834,6 +25899,7 @@ namespace {
          * @param string $sql
          *
          * @return Zend_Db_Statement_Sqlsrv
+         * @psalm-taint-escape sql
          */
         public function prepare($sql)
         {
@@ -25842,6 +25908,7 @@ namespace {
          * @param string $value
          *
          * @return string
+         * @psalm-taint-escape sql
          */
         public function _quote($value)
         {
@@ -25862,6 +25929,8 @@ namespace {
          * @return int
          *
          * @throws Zend_Db_Adapter_Exception
+         * @psalm-taint-sink sql $table
+         * @psalm-taint-sink sql $bind
          */
         public function insert($table, array $bind)
         {
@@ -25923,6 +25992,7 @@ namespace {
          * @return string
          *
          * @throws Zend_Db_Adapter_Sqlsrv_Exception
+         * @psalm-taint-sink sql $sql
          */
         public function limit($sql, $count, $offset = 0)
         {
@@ -25969,6 +26039,7 @@ namespace {
         }
         /**
          * @return string
+         * @psalm-taint-escape sql
          */
         public function __toString()
         {
@@ -26406,6 +26477,9 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function from($name, $cols = '*', $schema = null)
         {
@@ -26415,6 +26489,8 @@ namespace {
          * @param null|string $correlationName
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $correlationName
          */
         public function columns($cols = '*', $correlationName = null)
         {
@@ -26423,6 +26499,8 @@ namespace {
          * @param array<array-key, mixed> $select
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $select
+         * @psalm-taint-sink sql $type
          */
         public function union($select = array(), $type)
         {
@@ -26434,6 +26512,10 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function join($name, $cond, $cols, $schema = null)
         {
@@ -26445,6 +26527,10 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinInner($name, $cond, $cols, $schema = null)
         {
@@ -26456,6 +26542,10 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinLeft($name, $cond, $cols, $schema = null)
         {
@@ -26467,6 +26557,10 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinRight($name, $cond, $cols, $schema = null)
         {
@@ -26478,6 +26572,10 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinFull($name, $cond, $cols, $schema = null)
         {
@@ -26488,6 +26586,9 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinCross($name, $cols, $schema = null)
         {
@@ -26498,6 +26599,9 @@ namespace {
          * @param null|string $schema
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function joinNatural($name, $cols, $schema = null)
         {
@@ -26508,6 +26612,9 @@ namespace {
          * @param int|null $type
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $value
+         * @psalm-taint-sink sql $type
          */
         public function where($cond, $value = null, $type = null)
         {
@@ -26518,6 +26625,9 @@ namespace {
          * @param int|null $type
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $value
+         * @psalm-taint-sink sql $type
          */
         public function orWhere($cond, $value = null, $type = null)
         {
@@ -26526,6 +26636,7 @@ namespace {
          * @param array<array-key, mixed>|string $spec
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $spec
          */
         public function group($spec)
         {
@@ -26536,6 +26647,9 @@ namespace {
          * @param int|null $type
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $value
+         * @psalm-taint-sink sql $type
          */
         public function having($cond, $value = null, $type = null)
         {
@@ -26546,6 +26660,9 @@ namespace {
          * @param int|null $type
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $value
+         * @psalm-taint-sink sql $type
          */
         public function orHaving($cond, $value = null, $type = null)
         {
@@ -26554,6 +26671,7 @@ namespace {
          * @param mixed $spec
          *
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $spec
          */
         public function order($spec)
         {
@@ -26633,12 +26751,22 @@ namespace {
          * @return Zend_Db_Select
          *
          * @throws Zend_Db_Select_Exception
+         * @psalm-taint-sink sql $type
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function _join($type, $name, $cond, $cols, $schema = null)
         {
         }
         /**
          * @return Zend_Db_Select
+         * @psalm-taint-sink sql $type
+         * @psalm-taint-sink sql $name
+         * @psalm-taint-sink sql $cond
+         * @psalm-taint-sink sql $cols
+         * @psalm-taint-sink sql $schema
          */
         public function _joinUsing($type, $name, $cond, $cols = '*', $schema = null)
         {
@@ -26666,6 +26794,9 @@ namespace {
          * @param bool $bool
          *
          * @return string
+         * @psalm-taint-sink sql $condition
+         * @psalm-taint-sink sql $value
+         * @psalm-taint-sink sql $type
          */
         public function _where($condition, $value = null, $type = null, $bool = true)
         {
@@ -26835,12 +26966,14 @@ namespace {
         /**
          * @param Zend_Db_Adapter_Abstract $adapter
          * @param mixed $sql
+         * @psalm-taint-sink sql $sql
          */
         public function __construct($adapter, $sql)
         {
         }
         /**
          * @return void
+         * @psalm-taint-escape sql
          */
         public function _prepare($sql)
         {
@@ -27003,6 +27136,7 @@ namespace {
          * @return void
          *
          * @throws Zend_Db_Statement_Db2_Exception
+         * @psalm-taint-escape sql
          */
         public function _prepare($sql)
         {
@@ -27307,6 +27441,7 @@ namespace {
          * @return void
          *
          * @throws Zend_Db_Statement_Mysqli_Exception
+         * @psalm-taint-escape sql
          */
         public function _prepare($sql)
         {
@@ -27831,6 +27966,7 @@ namespace {
          * @return void
          *
          * @throws Zend_Db_Statement_Sqlsrv_Exception
+         * @psalm-taint-escape sql
          */
         public function _prepare($sql)
         {
@@ -137204,6 +137340,7 @@ namespace {
          * @return void
          *
          * @throws Zend_View_Exception
+         * @psalm-taint-sink html $val
          */
         public function __set($key, $val)
         {
@@ -137221,6 +137358,7 @@ namespace {
          * @param array<array-key, mixed> $args
          *
          * @return string
+         * @psalm-taint-sink callable $name
          */
         public function __call($name, $args)
         {
@@ -137229,6 +137367,7 @@ namespace {
          * @param string $path
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function setBasePath($path, $classPrefix = 'Zend_View')
         {
@@ -137237,18 +137376,21 @@ namespace {
          * @param string $path
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function addBasePath($path, $classPrefix = 'Zend_View')
         {
         }
         /**
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function addScriptPath($path)
         {
         }
         /**
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function setScriptPath($path)
         {
@@ -137290,6 +137432,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function addHelperPath($path, $classPrefix = 'Zend_View_Helper_')
         {
@@ -137299,6 +137442,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function setHelperPath($path, $classPrefix = 'Zend_View_Helper_')
         {
@@ -137346,6 +137490,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function addFilterPath($path, $classPrefix = 'Zend_View_Filter_')
         {
@@ -137354,6 +137499,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $path
          */
         public function setFilterPath($path, $classPrefix = 'Zend_View_Filter_')
         {
@@ -137430,6 +137576,7 @@ namespace {
          * @return Zend_View_Abstract
          *
          * @throws Zend_View_Exception
+         * @psalm-taint-sink html $value
          */
         public function assign($spec, $value = null)
         {
@@ -137450,6 +137597,7 @@ namespace {
          * @param string $name
          *
          * @return string
+         * @psalm-taint-sink include $name
          */
         public function render($name)
         {
@@ -137458,6 +137606,7 @@ namespace {
          * @param mixed $var
          *
          * @return mixed
+         * @psalm-taint-escape html
          */
         public function escape($var)
         {
@@ -137488,6 +137637,7 @@ namespace {
          * @param string $name
          *
          * @return void
+         * @psalm-taint-sink include $name
          */
         public function _script($name)
         {
@@ -137496,6 +137646,7 @@ namespace {
          * @param string $buffer
          *
          * @return string
+         * @psalm-taint-sink include $buffer
          */
         public function _filter($buffer)
         {
@@ -137506,6 +137657,7 @@ namespace {
          * @param null|string $prefix
          *
          * @return void
+         * @psalm-taint-sink include $path
          */
         public function _addPath($type, $path, $prefix = null)
         {
@@ -137514,6 +137666,7 @@ namespace {
          * @param string $type
          * @param array<array-key, mixed>|string $path
          * @param null|string $classPrefix
+         * @psalm-taint-sink include $path
          */
         public function _setPath($type, $path, $classPrefix = null)
         {
@@ -137532,6 +137685,7 @@ namespace {
          * @param string $file
          *
          * @return void
+         * @psalm-taint-sink include $file
          */
         public function _setHelperClass($name, $class, $file)
         {
@@ -137542,6 +137696,7 @@ namespace {
          * @param string $file
          *
          * @return void
+         * @psalm-taint-sink include $file
          */
         public function _setFilterClass($name, $class, $file)
         {
@@ -137552,6 +137707,7 @@ namespace {
          * @param array<array-key, mixed> $paths
          *
          * @return Zend_View_Abstract
+         * @psalm-taint-sink include $paths
          */
         public function _addPluginPath($type, $classPrefix, array $paths)
         {
@@ -137668,6 +137824,7 @@ namespace {
          * @param null|string $file
          *
          * @return string
+         * @paslm-taint-sink file $file
          */
         public function baseUrl($file = null)
         {
@@ -137676,6 +137833,7 @@ namespace {
          * @param string $base
          *
          * @return Zend_View_Helper_BaseUrl
+         * @paslm-taint-sink file $file
          */
         public function setBaseUrl($base)
         {
@@ -139339,6 +139497,7 @@ namespace {
          * @param bool $encodeData
          *
          * @return null|string
+         * @psalm-taint-sink unserialize $data
          */
         public function json($data, $keepLayouts = false, $encodeData = true)
         {
@@ -139412,6 +139571,7 @@ namespace {
          *
          * @throws Zend_View_Exception
          * @throws Zend_Navigation_Exception
+         * @psalm-taint-sink callable $method
          */
         public function __call($method, array $arguments = array())
         {
@@ -139424,6 +139584,7 @@ namespace {
          *
          * @throws Zend_Loader_PluginLoader_Exception
          * @throws Zend_View_Exception
+         * @psalm-taint-sink callable $proxy
          */
         public function findHelper($proxy, $strict = true)
         {
@@ -139440,6 +139601,7 @@ namespace {
          * @param string $proxy
          *
          * @return Zend_View_Helper_Navigation
+         * @psalm-taint-sink callable $proxy
          */
         public function setDefaultProxy($proxy)
         {
@@ -139564,6 +139726,7 @@ namespace {
          * @param array<array-key, mixed>|string $partial
          *
          * @return Zend_View_Helper_Navigation_Breadcrumbs
+         * @psalm-taint-sink include $partial
          */
         public function setPartial($partial)
         {
@@ -139587,6 +139750,7 @@ namespace {
          * @param array<array-key, mixed>|null|string $partial
          *
          * @return string
+         * @psalm-taint-sink include $partial
          */
         public function renderPartial(?\Zend_Navigation_Container $container = null, $partial = null)
         {
@@ -139960,6 +140124,7 @@ namespace {
          * @return mixed
          *
          * @throws Zend_Navigation_Exception
+         * @psalm-taint-sink callable $method
          */
         public function __call($method, array $arguments = array())
         {
@@ -140111,6 +140276,7 @@ namespace {
          * @param array<array-key, mixed> $arguments
          *
          * @throws Zend_Navigation_Exception
+         * @psalm-taint-sink callable $method
          */
         public function __call($method, array $arguments = array())
         {
@@ -140445,6 +140611,7 @@ namespace {
          * @param array<array-key, mixed>|string $partial
          *
          * @return Zend_View_Helper_Navigation_Menu
+         * @psalm-taint-sink include $partial
          */
         public function setPartial($partial)
         {
@@ -140566,6 +140733,7 @@ namespace {
          * @return string
          *
          * @throws Zend_View_Exception
+         * @psalm-taint-sink include $partial
          */
         public function renderPartial(?\Zend_Navigation_Container $container = null, $partial = null)
         {
@@ -140726,6 +140894,7 @@ namespace {
         }
         /**
          * @param array<array-key, mixed>|string $partial
+         * @psalm-taint-sink include $partial
          */
         public static function setDefaultViewPartial($partial)
         {
@@ -140761,6 +140930,7 @@ namespace {
          * @param array<array-key, mixed>|null $model
          *
          * @return Zend_View_Helper_Partial|string
+         * @psalm-taint-sink include $name
          */
         public function partial($name = null, $module = null, $model = null)
         {
@@ -140798,6 +140968,7 @@ namespace {
          * @param array<array-key, mixed>|null $model
          *
          * @return string
+         * @psalm-taint-sink include $name
          */
         public function partialLoop($name = null, $module = null, $model = null)
         {
@@ -141072,6 +141243,7 @@ namespace {
          * @param string $string
          *
          * @return string
+         * @psalm-taint-escape html
          */
         public function _escape($string)
         {
@@ -141128,6 +141300,7 @@ namespace {
          * @param array<array-key, mixed> $args
          *
          * @return mixed
+         * @psalm-taint-sink callable $method
          */
         public function __call($method, $args)
         {
@@ -141448,6 +141621,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return void
+         * @psalm-taint-sink include $path
          */
         public function setBasePath($path, $classPrefix = 'Zend_View');
         /**
@@ -141455,6 +141629,7 @@ namespace {
          * @param string $classPrefix
          *
          * @return void
+         * @psalm-taint-sink include $path
          */
         public function addBasePath($path, $classPrefix = 'Zend_View');
         /**
@@ -141462,6 +141637,7 @@ namespace {
          * @param mixed $val
          *
          * @return void
+         * @psalm-taint-sink html $val
          */
         public function __set($key, $val);
         /**
@@ -141481,6 +141657,7 @@ namespace {
          * @param mixed|null $value
          *
          * @return void
+         * @psalm-taint-sink html $value
          */
         public function assign($spec, $value = null);
         /**
@@ -141491,6 +141668,7 @@ namespace {
          * @param string $name
          *
          * @return string
+         * @psalm-taint-sink include $name
          */
         public function render($name);
     }
